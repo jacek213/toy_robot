@@ -3,8 +3,9 @@ module ToyRobot
 
     def self.start
       ARGF.each_line do |line|
-        @robot ||= Robot.new(Table.new(5,5))
-        command = OptionsParser.fetch_command(line.strip)
+        @table ||= Table.new(5, 5)
+        @robot ||= Robot.new(@table)
+        command = CommandParser.fetch(line.strip)
         Interface.run(@robot, command) if command
       end
     end

@@ -1,5 +1,4 @@
 module ToyRobot
-
   class Table
     attr_reader :width, :height
 
@@ -7,8 +6,8 @@ module ToyRobot
       @width, @height = width, height
     end
 
-    def valid_coordinates?(coords)
-      valid_x_position?(coords[:x]) && valid_y_position?(coords[:y])
+    def valid_position?(position)
+      valid_x_position?(position.x) && valid_y_position?(position.y)
     end
 
     private
