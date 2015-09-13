@@ -1,17 +1,12 @@
 module ToyRobot
   class Position
-    attr_accessor :orientation, :x, :y
+    attr_accessor :direction, :x, :y
 
-    ROTATION_MAPPING = {
-      west: { left: :south, right: :north },
-      south: { left: :east, right: :west },
-      east: { left: :north, right: :south },
-      north: { left: :west, right: :east }
-    }
+    DIRECTIONS = [:north, :east, :south, :west]
 
     def self.step_ahead(position)
       stepped = position.clone
-      case stepped.orientation
+      case stepped.direction
       when :north then stepped.y += 1
       when :south then stepped.y -= 1
       when :east  then stepped.x += 1
@@ -21,13 +16,17 @@ module ToyRobot
     end
 
     def initialize(opts)
-      @x = opts[:x]
-      @y = opts[:y]
-      @orientation = opts[:orientation]
+      @x, @y = opts[:x], opts[:y]
+      @direction = opts[:direction]
     end
 
-    def rotate(direction)
-      self.orientation = ROTATION_MAPPING[orientation][direction]
+    def to_s
+      "#{x},#{y},#{direction.upcase}\n"
+    end
+
+    def rotate(kind)
+      idx = DIRECTIONS.index(direction).send(kind, 1) % DIRECTIONS.length
+      self.direction = DIRECTIONS[idx]
     end
   end
 end

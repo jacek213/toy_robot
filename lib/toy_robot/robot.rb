@@ -18,14 +18,14 @@ module ToyRobot
       set_position_if_valid(placement)
     end
 
-    def rotate(direction)
+    def rotate(kind)
       return unless placed?
-      position.rotate(direction)
+      position.rotate(kind)
     end
 
     def report
       return unless placed?
-      STDERR.puts "#{position.x},#{position.y},#{position.orientation}\n"
+      position.to_s
     end
 
     private

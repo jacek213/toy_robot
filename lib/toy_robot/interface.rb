@@ -3,11 +3,10 @@ module ToyRobot
 
     def self.run(robot, command)
       case command[:name]
-      when 'PLACE'  then robot.place(command[:args])
-      when 'MOVE'   then robot.move
-      when 'LEFT'   then robot.rotate(:left)
-      when 'RIGHT'  then robot.rotate(:right)
-      when 'REPORT' then robot.report
+      when :place   then robot.place(command[:args])
+      when :rotate  then robot.rotate(command[:args])
+      when :move    then robot.move
+      when :report  then STDERR.puts(robot.report) if robot.report
       end
     end
   end
