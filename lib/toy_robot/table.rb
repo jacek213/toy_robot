@@ -6,8 +6,8 @@ module ToyRobot
       @width, @height = width, height
     end
 
-    def valid_position?(position)
-      valid_x?(position.x) && valid_y?(position.y)
+    def valid_position?(x, y)
+      valid_x?(x) && valid_y?(y)
     end
 
     private

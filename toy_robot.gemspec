@@ -17,4 +17,8 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'bundler'
   gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'minitest'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'minitest-reporters'
+  gem.add_development_dependency 'simplecov'
 end

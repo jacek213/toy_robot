@@ -31,7 +31,7 @@ module ToyRobot
     private
 
     def set_position_if_valid(placement)
-      if table.valid_position?(placement)
+      if table.valid_position?(placement.x, placement.y)
         @position = placement
       end
     end

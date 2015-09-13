@@ -21,7 +21,7 @@ module ToyRobot
     end
 
     def to_s
-      "#{x},#{y},#{direction.upcase}\n"
+      "#{x},#{y},#{direction.upcase}"
     end
 
     def rotate(kind)

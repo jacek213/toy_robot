@@ -6,13 +6,11 @@ module ToyRobot
         print_line
 
         ARGF.each_line do |line|
-        trap("INT") { puts '1' }
           @table ||= Table.new(5, 5)
           @robot ||= Robot.new(@table)
           command = CommandParser.fetch(line.strip)
           Interface.run(@robot, command) if command
           print_line
-        trap("INT") { puts '2' }
         end
       end
 

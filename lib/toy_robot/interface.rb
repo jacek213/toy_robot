@@ -6,7 +6,7 @@ module ToyRobot
       when :place   then robot.place(command[:args])
       when :rotate  then robot.rotate(command[:args])
       when :move    then robot.move
-      when :report  then STDERR.puts(robot.report) if robot.report
+      when :report  then STDERR.puts("#{robot.report}\n") if robot.report
       end
     end
   end
