@@ -1,4 +1,5 @@
 # Toy Robot Simulation
+[![Build Status](https://travis-ci.org/jacekgrzybowski/toy_robot.svg?branch=master)](https://travis-ci.org/jacekgrzybowski/toy_robot) 
 
 Simulation of a toy robot  which moves around the table in any direction and is prevented from falling.
 
